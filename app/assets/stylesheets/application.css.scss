@@ -14,7 +14,5 @@
  *= require_self
  */
 
-.alert {
-  color: red;
-  font-style: italic;
-}
+@import "bootstrap-sprockets";
+@import "bootstrap";

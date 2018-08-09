@@ -11,7 +11,8 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     if @post.user_id != current_user.id
-      redirect_to posts_path 
+      redirect_to posts_path
+    end
   end
 
   # GET /posts/new
@@ -66,13 +67,12 @@ class PostsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_post
+  def set_post
       @post = Post.find(params[:id])
-    end
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
+  def post_params
       params.require(:post).permit(:title, :body)
-    end
   end
 end
